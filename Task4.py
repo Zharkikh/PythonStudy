@@ -1,8 +1,16 @@
 # PythonStudy
 Обучение новому языку программирования домашние задания 
-lis = [55,57,7,48,73,5,79]
-#lis.sort(key=lambda x: (int(str(x)[0]), int(str(x)[1])),reverse=True)
-import operator
-list1 = sorted(lis, key=lambda x: (int(str(x)[0])))
-list1.reverse()
-print(list1)
+print("Введите входной параметр")
+number = int(input())
+if 0<number<=100:
+    source_array = input().split(' ')
+    for i in range(number - 1):
+        for j in range(0, number-i-1):
+            var1 = source_array[j] + source_array[j+1]
+            var2 = source_array[j + 1] + source_array[j]
+            if var1 < var2:
+                source_array[j], source_array[j+1] = source_array[j+1], source_array[j]
+                    
+    print("".join(source_array))
+else:
+    print("Входной параметр должен быть в промежутке от [0.....100]")
